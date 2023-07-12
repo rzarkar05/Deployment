@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 from typing import Optional
 from fastapi import Depends, APIRouter, Form, HTTPException, Request, Response
-from jwt import PyJWTError
 from AsterApp.database import SessionLocal, engine
 from starlette.responses import RedirectResponse
 import AsterApp.models
@@ -89,7 +88,7 @@ async def get_curr_user(request: Request):
         if username is None or user_id is None:
             logout(request)
         return {"username": username, "id": user_id}
-    except PyJWTError:
+    except:
         raise HTTPException(status_code=404, detail="Not found")
 
 
