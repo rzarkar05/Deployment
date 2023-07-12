@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Predictor</title>
+    <link rel="stylesheet" type="text/css" href="/AINFL/static/style.css">
+    <style>
+        body {
+            background-image: url("/AINFL/static/images/background-home.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="left-side">
+            <h1>AI NFL Pass Yard Predictor</h1>
+          </div>
+          <div class="right-side">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#workflow">Workflow</a></li>
+              <li><a href="http://rishispersonalprofile.rf.gd/#home">Portfolio</a></li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="left-section">
+            <h2>About the Project</h2>
+            <p>Introducing our revolutionary AI NFL Pass Yard Predictor. Take your football analysis to the next level with our cutting-edge app that utilizes the power of artificial intelligence to predict the passing yards thrown by a quarterback. Gain valuable insights and make informed decisions based on the models accurate predictions. Whether you're a football enthusiast, a fantasy football player, or a sports better, my app provides you with the competitive edge you need. Stay ahead of the game and unleash the potential of data-driven predictions with our AI NFL Pass Yard Predictor.</p>
+            <div>
+                <h2>Prediction Result</h2>
+                <div class = "right-section2a">
+                    <p class = "p1">Week:<span class = "pulsing-glow"> {{ week }} </span></p>
+                    <p class = "p1">Predicted Yards: <span class = "pulsing-glow">{{ predicted_yards }} </span></p>
+                    <p class = "p1">Mean Absolute Error: <span class = "pulsing-glow">{{ mae }}</span></p>
+                    <p class = "p1">Root Mean Squared Error: <span class = "pulsing-glow">{{ rmse }}</span></p>
+                    <p class = "p1">Mean Squared Error: <span class = "pulsing-glow">{{ mse }}</span></p>
+                    <p class = "p1">R-Squared Score: <span class = "pulsing-glow">{{ r2 }}</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="right-section">
+            <h2>Preselect a QB</h2>
+            <div class="button-container">
+                <form action="/ai-nfl/allen-prediction" method="POST">
+                    <button class="qb-button" type="submit">Josh Allen</button>
+                    <input type="number" name="week" placeholder="Week">
+                </form>
+            </div>
+            <div>
+                <form action="/ai-nfl/mahomes-prediction" method="POST">
+                    <button class="qb-button" type="submit">Patrick Mahomes</button>
+                    <input type="number" name="week" placeholder="Week">
+                </form>
+            </div>
+            <div>
+                <form action="/ai-nfl/jackson-prediction" method="POST">
+                    <button class="qb-button" type="submit">Lamar Jackson</button>
+                    <input type="number" name="week" placeholder="Week">
+                </form>
+            </div>
+            <div>
+                <h2>Tutorial</h2>
+                <div class = "video-container">
+                    <video src="/static/images/Tutorial.mp4" controls>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="user-select">
+        <div>
+
+        </div>
+        <div class="right-section">
+            <h2>Enter Link Below</h2>
+            <div class="button-container">
+                <form action="/ai-nfl/alternate-player" method="POST">
+                    <input type="text" id="link-input" placeholder="Link"> <span><input type="number" name="week" placeholder="Week"></span>
+                    <button id="predict-button">Predict</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="workflow">
+        <h2>App Workflow</h2>
+        <img src="/AINFL/static/images/AINFL_workflow.jpg" alt="Workflow Image">
+    </section>
+</body>
+</html>
+
