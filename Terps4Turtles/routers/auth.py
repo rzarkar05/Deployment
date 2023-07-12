@@ -1,8 +1,6 @@
 from datetime import datetime, timedelta
-from typing import Annotated, Optional
+from typing import  Optional
 from fastapi import Depends, FastAPI, APIRouter, Form, HTTPException, Request, Response
-from jwt import PyJWTError
-from pydantic import BaseModel
 from Terps4Turtles.database import SessionLocal, engine
 from starlette.responses import RedirectResponse
 from Terps4Turtles.models import Users
@@ -92,7 +90,7 @@ async def get_curr_user(request: Request):
         if username is None or user_id is None:
             logout(request)
         return {"username": username, "id": user_id}
-    except PyJWTError:
+    except:
         raise HTTPException(status_code=404, detail="Not found")
 
 
