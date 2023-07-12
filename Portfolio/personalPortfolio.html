@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rishi Zarkar</title>
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- FAVICON -->
+  <link class="favicon" rel="icon" type="image/img" sizes="32x32" href="Portfolio/images/favicon.png">
+
+  <!-- Google material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+   <!-- CSS -->
+  <link rel="stylesheet" href="Portfolio/style.css" />
+
+   <!-- TYPE JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+    integrity="sha512-3J8teBiHrSyaaRBajZyIEtpDsXdPq1gsznKWIVb5CnorQuFhjWGhWe54z8YNnHHr7MZuExb9m5kvf964HiT1Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <!-- jQUERY -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+   <!-- SWEET ALERT -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+   <!-- EMAIL JS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("pnG--GkoykSjnrWED");
+    })();
+  </script>
+
+</head>
+
+<body>
+    <nav class="navbar">
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div> 
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">My<span> Portfolio</span></a>
+        </div>
+        <ul class="menu">
+          <li><a href="#home" class="menu-btn">Home</a></li>
+          <li><a href="#about" class="menu-btn">About</a></li>
+          <li><a href="#skills" class="menu-btn">Featured</a></li>
+          <li><a href="#services" class="menu-btn">AI Projects</a></li>
+          <li><a href="#exp" class="menu-btn">Work Experience</a></li>
+          <li><a href="#project" class="menu-btn">Other Projects</a></li>
+        </ul>
+        <div class="menu-btn">
+          <i class="material-icons">menu</i>
+        </div>
+      </div>
+    </nav>
+  <!-- Scroll to top button -->
+    <button id="btnScrollToTop">
+      <i class="material-icons">arrow_upward</i>
+    </button>
+  <!-- home section start-->
+  <section class="home" id="home">
+    <div class="max-width">
+      <div class="home-content">
+        <div class="text-1" data-aos="fade-up">Hello, my name is</div>
+        <div class="text-2">Rishi Zarkar</div>
+        <div class="text-3">Im a <span class="typing"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about section -->
+  <section class="about" id="about">
+    <h2 class="title" data-aos="fade-down" >About Me</h2>
+    <div class="max-width">
+      <div class="about-content">
+        
+        <div class="column left" data-aos="fade-right" >
+          <img src="Portfolio/images/IMG_2492.jpg" alt="" />
+          <div class="text">
+            I'm Rishi Zarkar and Im a <span class="typing-2"></span>
+          </div> 
+          <p class="paragraph">
+            I am a student at the University of Maryland graduating in 2026 studying Computer Science on a ML track. I also am involved in biomedical research and technology. This web portfolio exemplifies my past work, experience, and some of my past projects. I am very excited about the future of CS and hope to learn as much as I can! 
+          </p>
+          </p>
+          <a href="https://docs.google.com/document/d/1_fpCVX0QyzWTD241O4TIOJU0WNIElM5oHHUW8ahTQ2s/edit?usp=sharing">
+             Resume</a>
+          <a href="https://www.linkedin.com/in/rishi-zarkar-083119212?original_referer=https%3A%2F%2Fwww.google.com%2F">
+             LinkedIn</a>
+          <a href="https://github.com/rzarkar05?tab=repositories">
+             GitHub</a>
+        </div>
+        <div class="column right" data-aos="fade-up">
+          <div class = "text">Languages</div>
+          <div class="icons">
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-css3.svg" alt="css" id="css-icon" data-aos="flip-left">
+              <div class="tooltip">CSS</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-javascript.svg" alt="js" id="js-icon" data-aos="flip-left">
+              <div class="tooltip">JavaScript</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-html-5.svg" alt="html" id="html-icon" data-aos="flip-left">
+              <div class="tooltip">HTML</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-c++.svg" alt="c++" id="cpp-icon" data-aos="flip-left">
+              <div class="tooltip">C++</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-python.svg" alt="python" data-aos="flip-left">
+              <div class="tooltip">Python</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-java.svg" alt="java" data-aos="flip-left">
+              <div class="tooltip">Java</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-sql-64.png" alt="sql" data-aos="flip-left">
+              <div class="tooltip">SQL</div>
+            </div>
+          </div>
+          <div class = "text">IDEs</div>
+          <div class="icons">
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-visual-studio-code-2019.svg" alt="vscode" data-aos="flip-left">
+              <div class="tooltip">Visual Studio Code</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-java-eclipse.svg" alt="vscode" data-aos="flip-left">
+              <div class="tooltip">Eclipse</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-blocks-65.png" alt="vscode" data-aos="flip-left">
+              <div class="tooltip">Repl.it</div>
+            </div>
+            
+          </div>
+          <div class = "text">Tools</div>
+          <div class="icons">
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-rest-api-64.png" alt="rest-api" data-aos="flip-left">
+              <div class="tooltip">Fast API</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-github-48.png" alt="github" data-aos="flip-left">
+              <div class="tooltip">GitHub</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-lock-48.png" alt="github" data-aos="flip-left">
+              <div class="tooltip">OAuth2</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-word-64.png" alt="github" data-aos="flip-left">
+              <div class="tooltip">Word2Vec</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-word-wrap-48.png" alt="github" data-aos="flip-left">
+              <div class="tooltip">LDA Topic Modeling</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-database-40.png" alt="github" data-aos="flip-left">
+              <div class="tooltip">SQLAlchemy ORM Databases</div>
+            </div>
+            
+          <div class = "text">Key Skills</div>          
+          <div class="icons">     
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-ai-48.png" alt="ai" data-aos="flip-left">
+              <div class="tooltip">AI>Neural Networks</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-language-64.png" alt="ai" data-aos="flip-left">
+              <div class="tooltip">Natural Language Processing</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-analysis-48.png" alt="ai" data-aos="flip-left">
+              <div class="tooltip">AI Predictive Analysis</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-learning-48.png" alt="ai" data-aos="flip-left">
+              <div class="tooltip">Deep Learning</div>
+            </div>
+            <div class="icon-container">
+              <img src="Portfolio/images/skill-icons/icons8-vision-48.png" alt="ai" data-aos="flip-left">
+              <div class="tooltip">Computer Vision</div>
+            </div>
+            <div>.</div>
+
+            <a href="https://docs.google.com/document/d/18C4BgigSiAPMXjGCBLBZG2C_vBQxuavqHEaVJhPeQ4g/edit?usp=sharing">Certifications</a>
+            <div><a href="https://docs.google.com/document/d/18C4BgigSiAPMXjGCBLBZG2C_vBQxuavqHEaVJhPeQ4g/edit?usp=sharing">Publications</a></div>
+            <div><a href="https://docs.google.com/document/d/18C4BgigSiAPMXjGCBLBZG2C_vBQxuavqHEaVJhPeQ4g/edit?usp=sharing">Awards</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED section -->
+  <section class="about" id="skills">
+    <h2 class="title2" data-aos="fade-down" >Featured Initiatives</h2>
+    <h2 class="title2" data-aos="fade-down" ><a id="slideshowButton">Pause</a></h2>
+    <div class="max-width">
+      <div class="about-content">
+        <div class="slideshow">
+          <div class="slide">  <!-- AI Redfin Assistant -->
+            <p class="very-big-blue">AI Redfin Assistant</p>
+            <div class="column left" data-aos="fade-right">
+                <span class="white">Sold my software </span>
+                <span class="big-white">AI Redfin Assistant</span>
+                <span class="white"> to a real-estate company </span>
+                <span class="big-green"> S2M Properties </span>
+                <div><h6>-</h6></div>
+                <span class="white">The app allowed </span>
+                <span class="big-green">non-licenced investors </span>
+                <span class="white">to gain a significant  </span>
+                <span class="big-white">advantage </span>
+                <div><h6>-</h6></div>
+                <span class="white">The software uses </span>
+                <span class="big-white">ScrapFly software</span>
+                <span class="white"> to scrape Redfin listings and provide </span>
+                <span class="big-green">essential insights </span>
+                <span class="white">such as </span>
+                <span class="big-green">High Repair Equity, After Repair Value, </span>
+                <span class="white">and simple filters like</span>
+                <span class="big-white"> location, price, flood areas etc. </span>
+            </div>
+            <div class="column right" data-aos="fade-up">
+              <img src="Portfolio/images/Screen Shot 2023-07-12 at 11.15.17 AM.png" alt="Cannot Load Content">
+            </div>
+          </div>
+          <div class="slide"> <!-- HocoBots -->
+              <p class="very-big-blue">HocoBots</p>
+              <div class="column left" data-aos="fade-right">
+                  <span class="white">Founded a </span>
+                  <span class="big-white">nationwide STEM Organization</span>
+                  <span class="white"> with </span>
+                  <span class="big-green"> 30+ members </span>
+                  <span class="white">contributing over </span>
+                  <span class="big-green">4200 volunteer hours</span>
+                  <div><h6>-</h6></div>
+                  <span class="white">Started </span>
+                  <span class="big-green">4 Robotics Teams </span>
+                  <span class="white">and won  </span>
+                  <span class="big-green">17 State Level FLL Awards </span>
+                  <div><h6>-</h6></div>
+                  <span class="big-green">Raised 2100 dollars </span>
+                  <span class="big-white">for Grassroots Organizations </span>
+                  <span class="white">during 2020 COVID pandemic through  </span>
+                  <span class="big-white">Python Programming Courses </span>
+              </div>
+              <div class="column right" data-aos="fade-up">
+                  <img src="Portfolio/images/Screen Shot 2023-07-01 at 11.08.00 PM.png" alt="Cannot Load Content">                
+                <a href="https://hcbots.weebly.com/">Visit our Website to learn more!!</a>
+              </div>
+          </div>
+          <div class="slide"> <!-- Terps4Turtles -->
+              <p class="very-big-blue">Terps4Turtles</p>
+              <div class="column left" data-aos="fade-right">
+                <div>
+                  <span class="white">Founded a </span>
+                  <span class="big-white">UMD Student Organization </span>
+                  <span class="white"> to support the </span>
+                  <span class="big-green">endangered Galapagos Green Turtles and Giant Tortoises </span>
+                </div>
+                <div>
+                  <span class="white">Built a web application that tracks the turtles and update the user with an individuals location through</span>
+                  <span class="big-green">Movebank API, OAuth2, FastAPI </span>
+                  <span class="white">and other tools </span>
+                </div>
+                <div>
+                  <span class="big-white">Terps4Turtles has raised over </span>
+                  <span class="big-green">4700 dollars  </span>
+                  <span class="white">through student contribution and independent donation </span>
+                </div>                
+            </div>
+            <div class="column right" data-aos="fade-up">
+              <img src="Portfolio/images/pexels-maria-isabella-bernotti-2570524.jpg" alt="Cannot Load Content">
+              <a href="/terps4turtles/auth/">Visit our Website to learn more!!</a>
+              <div class="small">Note that the website may take a minute to load because it is run on a free render platform- I appreciate your patience</div>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Projects Section -->
+  <section class="services xyz" id="services">
+    <div class="max-width">
+      <div class="ai-projects">
+        <nav class="project-nav">
+            <ul>
+                <li><a href="#" onclick="showProjectContent(1); return false;">Predictive Analysis Project</a></li>
+                <li><a href="#" onclick="showProjectContent(2); return false;">Natural Language Processing Project</a></li>
+                <li><a href="#" onclick="showProjectContent(3); return false;">Deep Learning/Neural Network Project</a></li>
+                <li><a href="#" onclick="showProjectContent(4); return false;">Computer Vision Project</a></li>
+            </ul>
+        </nav>
+      </div>
+      <div id="project-content">
+        <div id="project1" class="project-details">
+          <div class="project1">        
+              <p class="very-big-blue">AI NFL Pass Yard Predictor</p>
+              <div><a href="/ai-nfl/">Test it out yourself!</a></div>
+              <div class="column left" data-aos="fade-right">
+                <span class="big-white">Employs <span class="big-green">BeautifulSoup4</span> to data from profootball focus </span>            
+                <span class="big-white">and sort all the gathered data into python dataframes </span>
+              </div>
+              <div class="column right" data-aos="fade-up">
+                <span class="big-white">Uses a players and defenses stats to create a </span>
+                <span class="big-green">predictive model </span>              
+                <span class="big-white">to assess current data and present a weekly accurate prediction  </span> 
+              </div>
+              <div class="project1">
+                <img src="Portfolio/images/nfl_workflow.jpg" alt="Cannot Load Content">
+              </div>
+          </div>
+        </div>
+        <div id="project2" class="project-details">
+          <div class="about-content">        
+            <div>        
+              <p class="very-big-blue">UMD Email Analyzer</p>
+              <div><a href="/nlp-email-analyzer/raw">Test it out yourself!</a></div>
+              <div class="column left" data-aos="fade-right">
+                <span class="big-white">Uses <span class="big-green">GoogleAPI</span> to read emails from UMD Student Orgs and employs a </span>
+                <span class="big-green">TDIF Vectorizer to Linear SVC Pipeline </span>              
+                <span class="big-white">to develop an accurate analysis of the emails </span>
+              </div>
+              <div class="column right" data-aos="fade-up">
+                <span class="big-white">Combined with </span>
+                <span class="big-green">LDA Topic Modeling and keyword search </span>
+                <span class="big-white">to sort the emails(spam/ham) and provide insights like important dates and grades </span>
+                <div></div>  
+              </div>              
+            </div>
+            <div class="project1">
+              <img src="Portfolio/images/UMDEMAIL_workflow.jpg" alt="Cannot Load Content">
+            </div>
+          </div>
+        </div>
+        <div id="project3" class="project-details">
+          <div class="about-content">        
+            <p class="very-big-blue">Coming Soon</p>
+          </div>
+        </div>
+        <div id="project4" class="project-details">
+          <div class="about-content">        
+            <p class="very-big-blue">Coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section class="project" id="exp">
+    <div class="max-width">
+      <h2 class="title" data-aos="fade-down">Work Experience</h2>
+      <div class="serv-content">
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text"><a href="http://espxglobal.com/">ESPX</a></div>
+            <p>
+              As part of the team developed real time Dashboards from publicly available Clean Energy (Solar, Battery Storage, Wind) to provide insights about cost, geo-location, storage & pricing, 
+              AWS tools and technology such as S3, Athena, and QuickSight were used to develop these dashboards along with python scripting to import data into AWS where it is stored, extracted and transformed for customer consumption
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-code"></i>
+            <div class="text"><a href="https://neuron-g.ai/">Neuron-G</a></div>
+            <p>
+              In Progress
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="text"><a href="https://www.cssfederal.com/">CSS Federal</a></div>
+            <p>
+              Developed a NLP algorithm that reads and categorizes public comments for CMS Comments and determine sentiments and other insights and construct an appropriate response with a team of devs.
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text"><a href="https://www.bluewavesemi.com/">BlueWave Semiconductors</a></div>
+            <p>
+              Lead the implementation of automated remote monitoring for film deposition machines using PLC circuitry programming and sensors which were greatly valuable during the pandemic
+            </p>
+          </div>
+        </div>
+
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text"><a href="https://sciencecosmos.com/">Science Cosmos</a></div>
+            <p>
+              Tutored 60+ elementary and middle schoolers at a local STEM Learning Center (Science Cosmo) as part of Summer Camp with a focus on robotics and programming in Python 
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="project" id="project">
+    <div class="max-width">
+      <h2 class="title" data-aos="fade-down">Other Projects</h2>
+      <div class="serv-content">
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text"><a href="/aster-app/auth/">Apartment Finance Processor</a><sup class="superscript"></sup></div>
+            <p>
+              Uses FASTAPI and OAuth2 to carry out basic CRUD operations with a SQLAlchemy Database and give users an overview of their finances which are linked to their google account
+            </p>
+          </div>
+        </div>
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text">Personal Portfolio<sup class="superscript"></sup></div>
+            <p>
+              This is a showcase of my skills, experiences, and achievements as a creative professional. It provides a comprehensive overview of my work, highlighting my expertise and demonstrating my ability to deliver impactful projects in various domains.
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="text">TANA Bot<sup class="superscript"></sup></div>            
+            <p>
+              Programmed a Google Home to answer questions about Indian History with GoogleAPIs similar to a chatbot.
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-mobile-alt"></i>
+            <div class="text"><a href="https://neuromakerstem.com/en/blog/services/team-river-hill/">NeuroMaker</a><sup class="superscript"></sup></div>
+            <p>
+              1st Place for research and development of assistive technology to refocus distracted drivers back on the road through the manipulation of Raw EEG data from BCI(Brain-Computer Interface). Our team also received a $1500 grant to continue R&D
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text">Remote Deposition Controller</div>
+            <p>
+              Used a PLC technology and circuitry to remotely monitor film deposition machines at BlueWave Semiconductors. These sensors were greatly valuable during the pandemic for reducing human contact. 
+            </p>
+          </div>
+        </div>
+
+        <div class="card glow" data-aos="flip-left">
+          <div class="box">
+            <i class="fas fa-laptop-code"></i>
+            <div class="text">Water Purity Tester<sup class="superscript"></sup></div>
+            <p>
+              Developed a water purity tester that sends texts to the users phone whenever the pH of your water is irregular using Raspberry Pi
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- footer section start -->
+  <footer>
+    <div class="text-center">
+      <span>
+        Created By <a href="#">Rishi Zarkar</a> | <span class="far fa-copyright"> </span> <script>document.write(new Date().getFullYear())</script> <span> | 443-518-6233 | rzarka0422@gmail.com</span>
+        <div>
+        </div>
+      </span>
+    </div>
+  </footer>
+  <script src="Portfolio/script.js"></script>
+  <script>
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {myFunction()};
+    
+    function myFunction() {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById("myBar").style.width = scrolled + "%";
+    }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init({easing : 'ease-in',delay: 100,duration: 300,offset:100});window.addEventListener('load', AOS.refresh);</script>
+</body>
+
+</html>
