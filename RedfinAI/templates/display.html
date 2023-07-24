@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REDFIN ANALYZER</title>
+    
+    <style>
+        table.dataframe th.col-DESCRIPTION {
+            width: 300px; /* Set the desired width for the DESCRIPTION column */
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <h1>Redfin Analyzer</h1>
+    </div>
+    <div>
+
+        <form action="/RedfinAI/filters/" method="post">
+            <h2>First select your house type</h2>
+            <label>
+                Townhouse:
+                <input type="checkbox" name="Townhouse" value="true">
+            </label>
+            <label>
+                Single Family:
+                <input type="checkbox" name="SingleFamily" value="true">
+            </label>
+            <label>
+                Multi-Family:
+                <input type="checkbox" name="MultiFamily" value="true">
+            </label>
+            <br>
+            <h2>Now select a price range</h2>
+            <label>
+                Min Price:
+                <input type="text" name="min_price">
+            </label>
+            <label>
+                Max Price:
+                <input type="text" name="max_price">
+            </label>
+            <br>
+            <h2>Now select a city and/or zipcode(not recommended)</h2>
+            <label>
+                City:
+                <input type="text" name="city">
+            </label>
+            <label>
+                Zipcode:
+                <input type="text" name="zipcode">
+            </label>
+            <input type="submit" value="Submit">
+            <p>This process may take a while</p>
+        </form>
+        <br>
+        <br>
+        <div>
+            {% if df is not none %}
+                <table>
+                    <thead>
+                        <tr>
+                            {% for col in df.columns %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                            <th>Save</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for _, row in df.iterrows() %}
+                            <tr>
+                                {% for col in df.columns %}
+                                    <td>{{ row[col] }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+    <script>
+        function saveMLS(mlsNumber) {
+            // Send an AJAX request to the route that saves the MLS number
+            fetch(`/RedfinAI/filters/save_mls/${mlsNumber}`)
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error saving MLS number:', error);
+                });
+        }
+        document.getElementById('filterButton').addEventListener('click', function() {
+            // Perform the API request when the button is clicked
+            fetch('/RedfinAI/filters/view_saved')
+                .then(response => response.text())
+                .then(data => {
+                    // Replace the content of the table with the filtered DataFrame HTML
+                    document.getElementById('filteredTable').innerHTML = data;
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
