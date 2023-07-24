@@ -5,6 +5,7 @@ from AsterApp.database import engine
 from AsterApp.routers import auth, todos, users, finances
 import AINFL.main
 import Terps4Turtles.main 
+import RedfinAI.main
 from starlette.staticfiles import StaticFiles
 import EmailAnalyzer.processor
 from fastapi import FastAPI, Request
@@ -23,6 +24,7 @@ app.mount("/EmailAnalyzer/resources", StaticFiles(directory="EmailAnalyzer/resou
 app.mount("/AINFL/static", StaticFiles(directory="AINFL/static"), name="static")
 app.mount("/Portfolio", StaticFiles(directory="Portfolio"), name="static")
 app.mount("/Terps4Turtles/static", StaticFiles(directory="Terps4Turtles/static"), name="static")
+app.mount("/RedfinAI/static", StaticFiles(directory="RedfinAI/static"), name="static")
 
 #ASTER APP 
 app.include_router(auth.router)
@@ -52,3 +54,6 @@ async def portfolio(request:Request):
 
 #TERPS4TURTLES
 app.include_router(Terps4Turtles.main.router)
+
+#TERPS4TURTLES
+app.include_router(RedfinAI.main.router)
