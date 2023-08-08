@@ -99,7 +99,7 @@ async def filtering(request: Request, min_price: int = Form(...), max_price: int
                     zipcode: str = Form(None), db: Session = Depends(get_db)):
     SHEET_ID = '195bxsJd05pT89yx1f2wJkUYPHJfRxvTs0BQrEVxLP68'
     SHEET_NAME = 'Sheet1'
-    url = f'https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}'
+    url = 'https://docs.google.com/spreadsheets/d/195bxsJd05pT89yx1f2wJkUYPHJfRxvTs0BQrEVxLP68/gviz/tq?tqx=out:csv&sheet=Sheet1'
     temp = pd.read_csv(url)
     house_type = []
     if(Townhouse):
@@ -113,35 +113,5 @@ async def filtering(request: Request, min_price: int = Form(...), max_price: int
     return templates.TemplateResponse("display.html", {"request": request, "df":df})
 
 
-@router.get("/save_mls/{mls_number}", response_class=HTMLResponse)
-async def save_mls(request: Request, mls_number: str, db: Session = Depends(get_db)):
-    user = await get_curr_user(request)
-    if user is None:
-        return RedirectResponse(url="/aster-app/auth", status_code=status.HTTP_302_FOUND)
-    user_id = user.get("id")
-    user = db.query(RedfinAI.models.Users).filter(RedfinAI.models.Users.id == user_id).first()
-    if user.saved is None:
-        user.saved = []
-    user.saved.append(mls_number)
-    db.add(user)
-    db.commit()
 
-@router.get("/view_saved", response_class=HTMLResponse)
-async def view_saved(request: Request, db: Session = Depends(get_db)):
-    user = await get_curr_user(request)
-    if user is None:
-        return RedirectResponse(url="/aster-app/auth", status_code=status.HTTP_302_FOUND)
-    user_id = user.get("id")
-    user = db.query(RedfinAI.models.Users).filter(RedfinAI.models.Users.id == user_id).first()
-    SHEET_ID = '195bxsJd05pT89yx1f2wJkUYPHJfRxvTs0BQrEVxLP68'
-    SHEET_NAME = 'Sheet1'
-    url = f'https://docs.google.com/spreadsheets/d/{SHEET_ID}/gviz/tq?tqx=out:csv&sheet={SHEET_NAME}'
-    dataframe = pd.read_csv(url)
-    print(user.id)
-    print(user.saved)
-    saved_mls_numbers = user.saved if user.saved is not None else []
-    print(saved_mls_numbers)
-    saved = dataframe[dataframe['MLS#'].isin(saved_mls_numbers)]
-    saved = sentiment_analysis(saved)
-    return templates.TemplateResponse("display.html", {"request": request, "df": saved})
 
